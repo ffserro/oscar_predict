@@ -5,24 +5,6 @@ st.title('Previsão do Oscar!')
 
 proba_model = pkl.load(open('./ensemble_proba_model.pkl', 'rb'))
 
-['Marketing expense', 
-'Production expense', 
-'Multiplex coverage',
-'Budget', 
-'Movie_length', 
-'Lead_ Actor_Rating', 
-'Lead_Actress_rating',
-'Director_rating', 
-'Producer_rating', 
-'Critic_rating', 
-'Trailer_views',
-'Time_taken', 
-'Twitter_hastags', 
-'Genre', 
-'Avg_age_actors',
-'Num_multiplex', 
-'Collection']
-
 
 with st.form('Movie_production'):
 
