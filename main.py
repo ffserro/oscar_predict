@@ -67,5 +67,5 @@ if enviar:
         'Num_multiplex' : [num_multiplex], 
         'Collection' : [collection]})
 
-    st.write('A probabilidade desse filme ganhar o oscar é de {:.2f}%'.format(100*proba_model.predict_proba(entry).iloc[0,1]))
+    st.write('A probabilidade desse filme ganhar o oscar é de {:.2f}%'.format(100*proba_model.predict_proba(entry)[0,1]))
 
