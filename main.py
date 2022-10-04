@@ -34,9 +34,9 @@ with st.form('Movie_production'):
 
     twitter_hashtags = st.number_input('Quantas menções no Twitter o filme teve?')
 
-    genre = st.selectbox('Qual é o gênero do filme?', options = ['Thriller', 'Drama', 'Comedy', 'Action'])
+    genre = st.selectbox('Qual é o gênero do filme?', options = ['Suspense', 'Drama', 'Comédia', 'Ação'])
 
-    genre = ['Thriller', 'Drama', 'Comedy', 'Action'].index(genre)
+    genre = ['Suspense', 'Drama', 'Comédia', 'Ação'].index(genre)
 
     avg_age_actors = st.number_input('Qaul é a idade média dos atores?')
 
@@ -45,3 +45,26 @@ with st.form('Movie_production'):
     collection = st.number_input('Qual é a coleção?')
 
     enviar = st.form_submit_button('Enviar')
+
+if enviar:
+    entry = pd.DataFrame({
+        'Marketing expense' : [marketing_expense], 
+        'Production expense' : [production_expense], 
+        'Multiplex coverage' : [multiplex_coverage],
+        'Budget' : [budget], 
+        'Movie_length' : [movie_length], 
+        'Lead_ Actor_Rating' : [lead_actor_rating], 
+        'Lead_Actress_rating' : [lead_actress_rating],
+        'Director_rating' : [director_rating], 
+        'Producer_rating' : [producer_rating], 
+        'Critic_rating' : [critic_rating], 
+        'Trailer_views' : [trailer_views],
+        'Time_taken' : [time_taken], 
+        'Twitter_hastags' : [twitter_hashtags], 
+        'Genre' : [genre], 
+        'Avg_age_actors' : [avg_age_actors],
+        'Num_multiplex' : [num_multiplex], 
+        'Collection' : [collection]})
+
+    st.write(proba_model.predict_proba(entry))
+
